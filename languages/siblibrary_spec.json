@@ -1,0 +1,956 @@
+{
+    "graphTypes": [
+        {
+            "superTypes": [
+                "graphmodel",
+                "modelelementcontainer",
+                "modelelement"
+            ],
+            "elementTypeId": "siblibrary:siblibrary",
+            "label": "SIBLibrary",
+            "annotations": [],
+            "attributes": [],
+            "containments": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:service",
+                        "siblibrary:task"
+                    ]
+                }
+            ],
+            "diagramExtension": "sibs"
+        }
+    ],
+    "nodeTypes": [
+        {
+            "superTypes": [
+                "node",
+                "modelelement"
+            ],
+            "elementTypeId": "siblibrary:label",
+            "label": "Label",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "create",
+                        "delete",
+                        "move",
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "AppearanceProvider",
+                    "values": [
+                        "SibLibLabelAppearanceProvider"
+                    ]
+                },
+                {
+                    "name": "disable",
+                    "values": [
+                        "select"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "icon",
+                    "defaultValue": "icons/service.png",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "siblibrary:label",
+                "styleParameter": [
+                    "${icon}",
+                    "${name}",
+                    "${label}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "node",
+                "modelelement"
+            ],
+            "elementTypeId": "siblibrary:branch",
+            "label": "Branch",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "palette",
+                    "values": [
+                        "Branching"
+                    ]
+                },
+                {
+                    "name": "Hook",
+                    "values": [
+                        "NodeHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize",
+                        "PostDelete"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "siblibrary:branch",
+                "styleParameter": [
+                    "${name}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "container",
+                "modelelementcontainer",
+                "node",
+                "modelelement",
+                "siblibrary:sibdef"
+            ],
+            "elementTypeId": "siblibrary:service",
+            "label": "Service",
+            "annotations": [
+                {
+                    "name": "Hook",
+                    "values": [
+                        "AutomatedHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize",
+                        "PostAttributeChange"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "multiline",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "documentation",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "containments": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:label"
+                    ]
+                },
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:input",
+                        "siblibrary:output"
+                    ]
+                },
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:branch"
+                    ]
+                }
+            ],
+            "view": {
+                "style": "siblibrary:service",
+                "styleParameter": []
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "container",
+                "modelelementcontainer",
+                "node",
+                "modelelement",
+                "siblibrary:sibdef"
+            ],
+            "elementTypeId": "siblibrary:task",
+            "label": "Task",
+            "annotations": [
+                {
+                    "name": "Hook",
+                    "values": [
+                        "InteractiveHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "multiline",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "documentation",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "containments": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:label"
+                    ]
+                },
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:input",
+                        "siblibrary:output"
+                    ]
+                },
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "siblibrary:branch"
+                    ]
+                }
+            ],
+            "view": {
+                "style": "siblibrary:task",
+                "styleParameter": []
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "node",
+                "modelelement",
+                "siblibrary:iodef"
+            ],
+            "elementTypeId": "siblibrary:input",
+            "label": "Input",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "palette",
+                    "values": [
+                        "IO"
+                    ]
+                },
+                {
+                    "name": "Hook",
+                    "values": [
+                        "NodeHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize",
+                        "PostDelete"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "typeName",
+                    "defaultValue": "<untyped>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "isList",
+                    "defaultValue": "false",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "siblibrary:input",
+                "styleParameter": [
+                    "${name}",
+                    "${typeName}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "node",
+                "modelelement",
+                "siblibrary:iodef"
+            ],
+            "elementTypeId": "siblibrary:output",
+            "label": "Output",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "palette",
+                    "values": [
+                        "IO"
+                    ]
+                },
+                {
+                    "name": "Hook",
+                    "values": [
+                        "NodeHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize",
+                        "PostDelete"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "typeName",
+                    "defaultValue": "<untyped>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "isList",
+                    "defaultValue": "false",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "siblibrary:output",
+                "styleParameter": [
+                    "${name}",
+                    "${typeName}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        }
+    ],
+    "edgeTypes": [],
+    "customTypes": [],
+    "appearances": [
+        {
+            "name": "siblibrary:default",
+            "lineWidth": 2,
+            "filled": false,
+            "imagePath": "icons/task.png",
+            "background": {
+                "r": 229,
+                "g": 229,
+                "b": 229
+            }
+        },
+        {
+            "name": "siblibrary:labelfont",
+            "filled": false,
+            "font": {
+                "fontName": "Sans",
+                "isBold": false,
+                "isItalic": false,
+                "size": 16
+            },
+            "foreground": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        },
+        {
+            "name": "siblibrary:labelfontitalics",
+            "filled": false,
+            "font": {
+                "fontName": "Sans",
+                "isBold": false,
+                "isItalic": true,
+                "size": 10
+            },
+            "foreground": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        },
+        {
+            "name": "siblibrary:labelfontwhite",
+            "filled": false,
+            "font": {
+                "fontName": "Sans",
+                "isBold": false,
+                "isItalic": false,
+                "size": 16
+            },
+            "foreground": {
+                "r": 255,
+                "g": 255,
+                "b": 255
+            }
+        }
+    ],
+    "styles": [
+        {
+            "name": "siblibrary:service",
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "ROUNDEDRECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 230,
+                        "g": 230,
+                        "b": 230
+                    },
+                    "parent": "siblibrary:default"
+                },
+                "size": {
+                    "width": 240,
+                    "height": 65,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [],
+                "cornerWidth": 6,
+                "cornerHeight": 6
+            }
+        },
+        {
+            "name": "siblibrary:task",
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "ROUNDEDRECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 230,
+                        "g": 230,
+                        "b": 230
+                    },
+                    "parent": "siblibrary:default"
+                },
+                "size": {
+                    "width": 240,
+                    "height": 65,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [],
+                "cornerWidth": 6,
+                "cornerHeight": 6
+            }
+        },
+        {
+            "name": "siblibrary:label",
+            "parameterCount": 3,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "parent": "siblibrary:default",
+                    "transparency": 1
+                },
+                "size": {
+                    "width": 236,
+                    "height": 50,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 8,
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 24,
+                            "height": 24,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "%1$s"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "siblibrary:labelfontitalics",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 40,
+                            "vertical": "TOP",
+                            "yMargin": 7
+                        },
+                        "value": "%2$s"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "siblibrary:labelfont",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 40,
+                            "vertical": "TOP",
+                            "yMargin": 24
+                        },
+                        "value": "%3$s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "siblibrary:input",
+            "parameterCount": 2,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "parent": "siblibrary:default",
+                    "foreground": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "lineWidth": 0
+                },
+                "size": {
+                    "width": 236,
+                    "height": 30,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 15,
+                            "height": 30,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "icons/arrow-input-filled-transparent-300.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "siblibrary:labelfontitalics",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 25,
+                            "vertical": "MIDDLE"
+                        },
+                        "value": "%s : %s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "siblibrary:output",
+            "parameterCount": 2,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "parent": "siblibrary:default",
+                    "foreground": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "lineWidth": 0
+                },
+                "size": {
+                    "width": 236,
+                    "height": 30,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "RIGHT",
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 15,
+                            "height": 30,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "icons/arrow-output-filled-300.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "siblibrary:labelfontitalics",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 25,
+                            "vertical": "MIDDLE"
+                        },
+                        "value": "%s : %s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "siblibrary:branch",
+            "parameterCount": 1,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "parent": "siblibrary:default",
+                    "foreground": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "lineWidth": 0
+                },
+                "size": {
+                    "width": 236,
+                    "height": 30,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 15,
+                            "height": 30,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "icons/arrow-branch-transparent-300.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "siblibrary:labelfontitalics",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 25,
+                            "vertical": "MIDDLE"
+                        },
+                        "value": "%s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "siblibrary:dummy",
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "xPos": 0,
+                            "yPos": 0
+                        },
+                        "size": {
+                            "width": 0,
+                            "height": 0,
+                            "widthFixed": false,
+                            "heightFixed": false
+                        },
+                        "path": "icons/service.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "xPos": 0,
+                            "yPos": 0
+                        },
+                        "size": {
+                            "width": 0,
+                            "height": 0,
+                            "widthFixed": false,
+                            "heightFixed": false
+                        },
+                        "path": "icons/task.png"
+                    }
+                ]
+            }
+        }
+    ]
+}

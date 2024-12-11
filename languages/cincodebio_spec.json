@@ -1,0 +1,1296 @@
+{
+    "graphTypes": [
+        {
+            "superTypes": [
+                "graphmodel",
+                "modelelementcontainer",
+                "modelelement"
+            ],
+            "elementTypeId": "cincodebio:cincodebiographmodel",
+            "label": "CincoDeBioGraphModel",
+            "annotations": [
+                {
+                    "name": "GeneratorAction",
+                    "values": [
+                        "CincoDeBioGenerator"
+                    ]
+                },
+                {
+                    "name": "Validation",
+                    "values": [
+                        "SibCheck"
+                    ]
+                },
+                {
+                    "name": "Validation",
+                    "values": [
+                        "DataFlowCheck"
+                    ]
+                },
+                {
+                    "name": "Validation",
+                    "values": [
+                        "ControlFlowCheck"
+                    ]
+                },
+                {
+                    "name": "CustomAction",
+                    "values": [
+                        "SyncSibLibraryWithBackEnd",
+                        "Refresh SIB Library"
+                    ]
+                }
+            ],
+            "attributes": [],
+            "containments": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:automatedsib",
+                        "cincodebio:interactivesib"
+                    ]
+                }
+            ],
+            "diagramExtension": "flow"
+        }
+    ],
+    "nodeTypes": [
+        {
+            "superTypes": [
+                "node",
+                "modelelement"
+            ],
+            "elementTypeId": "cincodebio:siblabel",
+            "label": "SIBLabel",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "create",
+                        "delete",
+                        "move",
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "disable",
+                    "values": [
+                        "select"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "icon",
+                    "defaultValue": "icons/service.png",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "cincodebio:siblabel",
+                "styleParameter": [
+                    "${label}",
+                    "${icon}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "node",
+                "modelelement"
+            ],
+            "elementTypeId": "cincodebio:blah",
+            "label": "Blah",
+            "annotations": [],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "values",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "cincodebio:sibvalue"
+                }
+            ],
+            "view": {
+                "style": "cincodebio:dataflow",
+                "styleParameter": []
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "container",
+                "modelelementcontainer",
+                "node",
+                "modelelement",
+                "cincodebio:sib"
+            ],
+            "elementTypeId": "cincodebio:automatedsib",
+            "label": "AutomatedSIB",
+            "annotations": [
+                {
+                    "name": "Hook",
+                    "values": [
+                        "AutomatedSibHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize",
+                        "CanSelect"
+                    ]
+                },
+                {
+                    "name": "CustomAction",
+                    "values": [
+                        "UpdateSIB",
+                        "Refresh SIB"
+                    ]
+                },
+                {
+                    "name": "AppearanceProvider",
+                    "values": [
+                        "SibAppearanceProvider"
+                    ]
+                },
+                {
+                    "name": "DoubleClickAction",
+                    "values": [
+                        "GenericSibHook"
+                    ]
+                },
+                {
+                    "name": "palette",
+                    "values": [
+                        "Automated"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        },
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "multiline",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "documentation",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        },
+                        {
+                            "name": "hidden",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "validBranches",
+                    "bounds": {
+                        "lowerBound": 0,
+                        "upperBound": -1
+                    },
+                    "type": "string"
+                }
+            ],
+            "containments": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:siblabel"
+                    ]
+                },
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:inputport",
+                        "cincodebio:outputport"
+                    ]
+                }
+            ],
+            "view": {
+                "style": "cincodebio:sib",
+                "styleParameter": []
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:controlflow"
+                    ]
+                }
+            ],
+            "outgoingEdges": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:controlflow"
+                    ]
+                }
+            ],
+            "primeReference": {
+                "name": "service",
+                "annotations": [
+                    {
+                        "name": "label",
+                        "values": [
+                            "${label}"
+                        ]
+                    }
+                ],
+                "type": "siblibrary:service"
+            }
+        },
+        {
+            "superTypes": [
+                "container",
+                "modelelementcontainer",
+                "node",
+                "modelelement",
+                "cincodebio:sib"
+            ],
+            "elementTypeId": "cincodebio:interactivesib",
+            "label": "InteractiveSIB",
+            "annotations": [
+                {
+                    "name": "Hook",
+                    "values": [
+                        "InteractiveSibHook",
+                        "PostCreate",
+                        "PostMove",
+                        "PostResize",
+                        "CanSelect"
+                    ]
+                },
+                {
+                    "name": "CustomAction",
+                    "values": [
+                        "UpdateSIB",
+                        "Refresh SIB"
+                    ]
+                },
+                {
+                    "name": "AppearanceProvider",
+                    "values": [
+                        "SibAppearanceProvider"
+                    ]
+                },
+                {
+                    "name": "DoubleClickAction",
+                    "values": [
+                        "GenericSibHook"
+                    ]
+                },
+                {
+                    "name": "palette",
+                    "values": [
+                        "Interactive"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "<unnamed>",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        },
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "multiline",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "documentation",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        },
+                        {
+                            "name": "hidden",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "validBranches",
+                    "bounds": {
+                        "lowerBound": 0,
+                        "upperBound": -1
+                    },
+                    "type": "string"
+                }
+            ],
+            "containments": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:siblabel"
+                    ]
+                },
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:inputport",
+                        "cincodebio:outputport"
+                    ]
+                }
+            ],
+            "view": {
+                "style": "cincodebio:sib",
+                "styleParameter": []
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:controlflow"
+                    ]
+                }
+            ],
+            "outgoingEdges": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:controlflow"
+                    ]
+                }
+            ],
+            "primeReference": {
+                "name": "task",
+                "annotations": [
+                    {
+                        "name": "label",
+                        "values": [
+                            "${label}"
+                        ]
+                    }
+                ],
+                "type": "siblibrary:task"
+            }
+        },
+        {
+            "superTypes": [
+                "node",
+                "modelelement",
+                "cincodebio:io"
+            ],
+            "elementTypeId": "cincodebio:inputport",
+            "label": "InputPort",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "create",
+                        "delete",
+                        "move",
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "AppearanceProvider",
+                    "values": [
+                        "InputAppearanceProvider"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "port",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "typeName",
+                    "defaultValue": "??",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "cincodebio:inputport",
+                "styleParameter": [
+                    "${name}",
+                    "${isList ? '[' : ''}",
+                    "${typeName}",
+                    "${isList ? ']' : ''}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": 1,
+                    "elements": [
+                        "cincodebio:dataflow"
+                    ]
+                }
+            ],
+            "outgoingEdges": []
+        },
+        {
+            "superTypes": [
+                "node",
+                "modelelement",
+                "cincodebio:io"
+            ],
+            "elementTypeId": "cincodebio:outputport",
+            "label": "OutputPort",
+            "annotations": [
+                {
+                    "name": "disable",
+                    "values": [
+                        "create",
+                        "delete",
+                        "move",
+                        "resize"
+                    ]
+                },
+                {
+                    "name": "AppearanceProvider",
+                    "values": [
+                        "OutputAppearanceProvider"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "name",
+                    "defaultValue": "port",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "typeName",
+                    "defaultValue": "??",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "cincodebio:outputport",
+                "styleParameter": [
+                    "${name}",
+                    "${isList ? '[' : ''}",
+                    "${typeName}",
+                    "${isList ? ']' : ''}"
+                ]
+            },
+            "resizable": true,
+            "repositionable": true,
+            "reparentable": true,
+            "deletable": true,
+            "width": 100,
+            "height": 100,
+            "incomingEdges": [],
+            "outgoingEdges": [
+                {
+                    "lowerBound": 0,
+                    "upperBound": -1,
+                    "elements": [
+                        "cincodebio:dataflow"
+                    ]
+                }
+            ]
+        }
+    ],
+    "edgeTypes": [
+        {
+            "superTypes": [
+                "edge",
+                "modelelement"
+            ],
+            "elementTypeId": "cincodebio:controlflow",
+            "label": "ControlFlow",
+            "annotations": [
+                {
+                    "name": "Hook",
+                    "values": [
+                        "ControlFlowHook",
+                        "PostCreate"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "label",
+                    "defaultValue": "",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ],
+            "view": {
+                "style": "cincodebio:controlflow",
+                "styleParameter": [
+                    "${label}"
+                ]
+            }
+        },
+        {
+            "superTypes": [
+                "edge",
+                "modelelement"
+            ],
+            "elementTypeId": "cincodebio:dataflow",
+            "label": "DataFlow",
+            "annotations": [
+                {
+                    "name": "Hook",
+                    "values": [
+                        "DataFlowHook",
+                        "PostCreate"
+                    ]
+                }
+            ],
+            "attributes": [],
+            "view": {
+                "style": "cincodebio:dataflow",
+                "styleParameter": []
+            }
+        }
+    ],
+    "customTypes": [
+        {
+            "superTypes": [
+                "userdefinedtype",
+                "cincodebio:sibvalue"
+            ],
+            "elementTypeId": "cincodebio:stringvalue",
+            "label": "StringValue",
+            "annotations": [],
+            "attributes": [
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "value",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "superTypes": [
+                "userdefinedtype",
+                "cincodebio:sibvalue"
+            ],
+            "elementTypeId": "cincodebio:enumvalue",
+            "label": "EnumValue",
+            "annotations": [],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "hidden",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "enum_values",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "value",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "superTypes": [
+                "userdefinedtype",
+                "cincodebio:sibvalue"
+            ],
+            "elementTypeId": "cincodebio:integervalue",
+            "label": "IntegerValue",
+            "annotations": [],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "min_scale",
+                    "defaultValue": "1",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "number"
+                },
+                {
+                    "annotations": [
+                        {
+                            "name": "hidden",
+                            "values": []
+                        },
+                        {
+                            "name": "readOnly",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "max_scale",
+                    "defaultValue": "10",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "number"
+                },
+                {
+                    "annotations": [],
+                    "final": false,
+                    "unique": false,
+                    "name": "scale",
+                    "defaultValue": "5",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "superTypes": [
+                "userdefinedtype",
+                "cincodebio:sibvalue"
+            ],
+            "elementTypeId": "cincodebio:colorvalue",
+            "label": "ColorValue",
+            "annotations": [],
+            "attributes": [
+                {
+                    "annotations": [
+                        {
+                            "name": "color",
+                            "values": []
+                        }
+                    ],
+                    "final": false,
+                    "unique": false,
+                    "name": "hex",
+                    "defaultValue": "5",
+                    "bounds": {
+                        "lowerBound": 1,
+                        "upperBound": 1
+                    },
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "appearances": [
+        {
+            "name": "cincodebio:default",
+            "lineWidth": 2,
+            "filled": false,
+            "imagePath": "icons/task.png",
+            "background": {
+                "r": 229,
+                "g": 229,
+                "b": 229
+            }
+        },
+        {
+            "name": "cincodebio:labelfont",
+            "filled": false,
+            "font": {
+                "fontName": "Sans",
+                "isBold": false,
+                "isItalic": false,
+                "size": 16
+            },
+            "foreground": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        },
+        {
+            "name": "cincodebio:labelfontitalics",
+            "filled": false,
+            "font": {
+                "fontName": "Sans",
+                "isBold": false,
+                "isItalic": true,
+                "size": 10
+            },
+            "foreground": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        },
+        {
+            "name": "cincodebio:labelfontwhite",
+            "filled": false,
+            "font": {
+                "fontName": "Sans",
+                "isBold": false,
+                "isItalic": false,
+                "size": 16
+            },
+            "foreground": {
+                "r": 255,
+                "g": 255,
+                "b": 255
+            }
+        },
+        {
+            "name": "cincodebio:controlflowappearanceline",
+            "lineWidth": 4,
+            "lineStyle": "SOLID",
+            "filled": false,
+            "foreground": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        },
+        {
+            "name": "cincodebio:controlflowappearancearrowhead",
+            "lineWidth": 4,
+            "lineStyle": "SOLID",
+            "filled": false,
+            "foreground": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        },
+        {
+            "name": "cincodebio:dataflowappearance",
+            "parent": "cincodebio:default",
+            "lineWidth": 1,
+            "lineStyle": "SOLID",
+            "filled": false,
+            "foreground": {
+                "r": 77,
+                "g": 77,
+                "b": 77
+            }
+        }
+    ],
+    "styles": [
+        {
+            "name": "cincodebio:sib",
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "ROUNDEDRECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 230,
+                        "g": 230,
+                        "b": 230
+                    },
+                    "parent": "cincodebio:default"
+                },
+                "size": {
+                    "width": 240,
+                    "height": 65,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [],
+                "cornerWidth": 6,
+                "cornerHeight": 6
+            }
+        },
+        {
+            "name": "cincodebio:siblabel",
+            "parameterCount": 2,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "parent": "cincodebio:default",
+                    "transparency": 1
+                },
+                "size": {
+                    "width": 236,
+                    "height": 50,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 8,
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 24,
+                            "height": 24,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "%2$s"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "cincodebio:labelfont",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 40,
+                            "vertical": "MIDDLE"
+                        },
+                        "value": "%1$s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "cincodebio:inputport",
+            "parameterCount": 4,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "parent": "cincodebio:default",
+                    "foreground": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "lineWidth": 0
+                },
+                "size": {
+                    "width": 236,
+                    "height": 30,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 15,
+                            "height": 30,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "icons/arrow-input-filled-transparent-300.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "cincodebio:labelfontitalics",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 25,
+                            "vertical": "MIDDLE"
+                        },
+                        "value": "%1$s : %3$s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "cincodebio:outputport",
+            "parameterCount": 4,
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "appearance": {
+                    "background": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "parent": "cincodebio:default",
+                    "foreground": {
+                        "r": 245,
+                        "g": 245,
+                        "b": 245
+                    },
+                    "lineWidth": 0
+                },
+                "size": {
+                    "width": 236,
+                    "height": 30,
+                    "widthFixed": false,
+                    "heightFixed": false
+                },
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "horizontal": "RIGHT",
+                            "vertical": "MIDDLE"
+                        },
+                        "size": {
+                            "width": 15,
+                            "height": 30,
+                            "widthFixed": true,
+                            "heightFixed": true
+                        },
+                        "path": "icons/arrow-output-filled-300.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "cincodebio:labelfontitalics",
+                        "position": {
+                            "horizontal": "LEFT",
+                            "xMargin": 25,
+                            "vertical": "MIDDLE"
+                        },
+                        "value": "%1$s : %3$s"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "cincodebio:controlflow",
+            "parameterCount": 1,
+            "appearance": "cincodebio:controlflowappearanceline",
+            "decorator": [
+                {
+                    "location": 0.98,
+                    "movable": false,
+                    "predefinedDecorator": {
+                        "shape": "ARROW",
+                        "appearance": "cincodebio:controlflowappearancearrowhead"
+                    }
+                },
+                {
+                    "location": 0.5,
+                    "movable": true,
+                    "decoratorShape": {
+                        "anchorShape": false,
+                        "type": "TEXT",
+                        "appearance": "cincodebio:labelfontwhite",
+                        "value": "%s"
+                    }
+                }
+            ],
+            "styleType": "EdgeStyle"
+        },
+        {
+            "name": "cincodebio:dataflow",
+            "appearance": "cincodebio:dataflowappearance",
+            "decorator": [],
+            "styleType": "EdgeStyle"
+        },
+        {
+            "name": "cincodebio:dummy",
+            "styleType": "NodeStyle",
+            "fixed": false,
+            "shape": {
+                "anchorShape": false,
+                "type": "RECTANGLE",
+                "children": [
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "xPos": 0,
+                            "yPos": 0
+                        },
+                        "size": {
+                            "width": 0,
+                            "height": 0,
+                            "widthFixed": false,
+                            "heightFixed": false
+                        },
+                        "path": "icons/service.png"
+                    },
+                    {
+                        "anchorShape": false,
+                        "type": "IMAGE",
+                        "position": {
+                            "xPos": 0,
+                            "yPos": 0
+                        },
+                        "size": {
+                            "width": 0,
+                            "height": 0,
+                            "widthFixed": false,
+                            "heightFixed": false
+                        },
+                        "path": "icons/task.png"
+                    }
+                ]
+            }
+        }
+    ]
+}
